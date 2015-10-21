@@ -24,6 +24,7 @@
   (setq lst_new (remove nil lst))
   (apply #'+ lst_new))
 
+;;removeは除いたものを返すだけで引数そのものを破壊的に変更しない
 (assert (eq (summit '(1 2 nil 3 4 nil)) 10) "mondai 1")
 
 (defun summit (lst)
@@ -33,7 +34,7 @@
     (cond ((null x)
            (summit (cdr lst)))
            (t (+ x (summit (cdr lst))))))))
-
+;;終了条件が無いので無限に再帰が呼ばれてしまう
 (assert (eq (summit '(1 2 nil 3 4 nil)) 10) "mondai 1")
 
 ;;
