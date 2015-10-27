@@ -1,6 +1,0 @@
-<launch>
-  <node pkg="enshu_20151021" name="send_goal" type="send_goal.py" />
-
-  <param name="test/topic" value="/move_base/goal" />
-  <test test-name="send_goal" pkg="enshu_20151021" type="check_topic.py" name="test" />
-</launch>

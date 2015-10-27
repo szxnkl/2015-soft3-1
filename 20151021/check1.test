@@ -1,8 +1,0 @@
-<launch>
-  <test test-name="renshu_1" pkg="enshu_20151021" type="renshu-1.l" />
-  <test test-name="renshu_2" pkg="enshu_20151021" type="renshu-2.l" />
-  <test test-name="renshu_3" pkg="enshu_20151021" type="renshu-3.l" />
-  <test test-name="renshu_4" pkg="enshu_20151021" type="renshu-4.l" />
-  <test test-name="renshu_5" pkg="enshu_20151021" type="renshu-5.l" />
-  <test test-name="renshu_6" pkg="enshu_20151021" type="renshu-6.l" />
-</launch>

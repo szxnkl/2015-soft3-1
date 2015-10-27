@@ -1,6 +1,0 @@
-<launch>
-  <node pkg="enshu_20151021" name="send_vel" type="send_vel.py" />
-
-  <param name="test/topic" value="/cmd_vel" />
-  <test test-name="send_vel" pkg="enshu_20151021" type="check_topic.py" name="test" />
-</launch>
