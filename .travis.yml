@@ -24,7 +24,7 @@ install:
   - source /opt/ros/hydro/setup.bash
 before_script:
   - ls
-  - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; if [ -e "$dir/$src" ] ; then cp $dir/check*.* $dir/$src; fi; done;
+  - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; if [ -e "$dir/$src" -a -e $dir/check*.* ] ; then cp $dir/check*.* $dir/$src; fi; done;
   - rdir=`pwd`
 script:
   - for dir in 20*; do echo "checking $dir"; pkg_dir=`catkin_topological_order $dir`; pkg="${pkg_dir% *}"; src="${pkg_dir##* }"; if [ -e "$dir/$src" ] ; then source /opt/ros/hydro/setup.bash; cd $dir; catkin build -v -i; source devel/setup.bash; rospack list; cd $src; EXIT_STATUS=0; for test_file in check*.test; do rostest $pkg $test_file || EXIT_STATUS=1; done; cd $rdir; fi; done; [ $EXIT_STATUS == 0 ]
