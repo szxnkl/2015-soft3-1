@@ -1,0 +1,8 @@
+fibonacci(1,1).
+fibonacci(0,0).
+fibonacci(N,Result) :- 
+M is N-1,
+L is N-2,
+fibonacci(M,Result1),
+fibonacci(L,Result2),	
+Result is Result1+Result2.
